@@ -10,7 +10,7 @@ const app = express()
 // Connect Databade
 connectDB()
 
-app.get('/', (req, res) => res.send('API Running'))
+app.get('/', (req, res) => res.send('<h1>API Running</h1>'))
 
 // Define Routes
 app.use('/api/users', users)
