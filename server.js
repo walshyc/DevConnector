@@ -23,6 +23,7 @@ app.use('/api/profile', profile)
 app.use('/api/posts', posts)
 app.use('/api/auth', auth)
 
+// Define port
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(`Server Started on ${PORT}`))
