@@ -1,4 +1,6 @@
 {
     "mongoURI":"mongodb+srv://conor123:conor123@cluster0-xtigo.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret":"WiJKWrjrjc"
+    "jwtSecret":"WiJKWrjrjc",
+    "githubClientId":"b3149379f52f5f39a636",
+    "githubSecret":"75c4c6dea00fa1272732daa67b7daaf9617526ad"
 }
