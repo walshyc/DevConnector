@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
-import PropTypes from 'prop-types'
+import { register } from "../../actions/auth";
+import PropTypes from "prop-types";
 
-const Register = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,23 +23,7 @@ const Register = ({ setAlert }) => {
     if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
-      // const newUser = {
-      //   name,
-      //   email,
-      //   password
-      // };
-      // try {
-      //     const config = {
-      //         headers: {
-      //             'Content-Type': 'application/json'
-      //         }
-      //     }
-      //     const body = JSON.stringify(newUser)
-      //     const res = await axios.post('/api/users', body, config)
-      //     console.log(res.data)
-      // } catch (error) {
-      //     console.error(error.message)
-      // }
+      register({ name, email, password });
     }
   };
   const { name, email, password, password2 } = formData;
@@ -56,7 +41,7 @@ const Register = ({ setAlert }) => {
             id="name"
             value={name}
             placeholder="Name"
-            required
+
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -67,7 +52,7 @@ const Register = ({ setAlert }) => {
             id="email"
             value={email}
             placeholder="Email Address"
-            required
+
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
@@ -82,8 +67,8 @@ const Register = ({ setAlert }) => {
             id="password"
             value={password}
             placeholder="Password"
-            required
-            minLength="6"
+
+
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -94,8 +79,7 @@ const Register = ({ setAlert }) => {
             id="confirmPassword"
             value={password2}
             placeholder="Confirm Password"
-            required
-            minLength="6"
+
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -110,6 +94,7 @@ const Register = ({ setAlert }) => {
 
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
-}
+  register: PropTypes.func.isRequired,
+};
 
-export default connect(null, { setAlert })(Register);
+export default connect(null, { setAlert, register })(Register);
