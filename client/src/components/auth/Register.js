@@ -41,7 +41,7 @@ const Register = ({ setAlert, register }) => {
             id="name"
             value={name}
             placeholder="Name"
-
+            required
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -52,7 +52,7 @@ const Register = ({ setAlert, register }) => {
             id="email"
             value={email}
             placeholder="Email Address"
-
+            required
             onChange={(e) => onChange(e)}
           />
           <small className="form-text">
@@ -67,8 +67,8 @@ const Register = ({ setAlert, register }) => {
             id="password"
             value={password}
             placeholder="Password"
-
-
+            required
+            minLength="6"
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -79,7 +79,8 @@ const Register = ({ setAlert, register }) => {
             id="confirmPassword"
             value={password2}
             placeholder="Confirm Password"
-
+            required
+            minLength="6"
             onChange={(e) => onChange(e)}
           />
         </div>
