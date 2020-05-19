@@ -8,6 +8,11 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
+        <Link to="/dashboard"> <i className="fas fa-user"></i>{" "}
+          <span className="hide-sm">Dashboard</span></Link>
+        
+      </li>
+      <li>
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>
@@ -38,7 +43,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <i className="fas fa-code"></i> DevConnector{" "}
         </Link>
       </h1>
-      {!loading && (<>{isAuthenticated ? authLinks : guestLinks}</>)}
+      {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
     </nav>
   );
 };
@@ -52,4 +57,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, {logout})(Navbar);
+export default connect(mapStateToProps, { logout })(Navbar);
