@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "react-router-dom";
 import PropTypes from "prop-types";
 
 const ProfileTop = ({
@@ -14,7 +13,7 @@ const ProfileTop = ({
 }) => {
   return (
     <div className="profile-top bg-primary p-2">
-      <img src={avatar} alt="Profile Image" className="round-img my-1" />
+      <img src={avatar} alt="Profile" className="round-img my-1" />
       <h1 className="large">{name}</h1>
       <p className="lead">
         {status} {company && <span>at {company}</span>}
