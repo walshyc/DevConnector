@@ -35,7 +35,7 @@ const AddEducation = ({ addEducation, history }) => {
       <h1 className="large text-primary">Add Your Education</h1>
       <p className="lead">
         <i className="fas fa-code-branch"></i> Add any school or bootcamp that
-        you ahve attended.
+        you have attended.
       </p>
       <small>* = required field</small>
       <form
@@ -96,7 +96,7 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{" "}
-            Current Job
+            Current School
           </p>
         </div>
 
