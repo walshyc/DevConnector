@@ -8,6 +8,7 @@ import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileEducation from "./ProfileEducation";
 import ProfileExperience from "./ProfileExperience";
+import ProfileGithub from "./ProfileGithub";
 
 const Profile = ({
   match,
@@ -31,7 +32,7 @@ const Profile = ({
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
-              <Link to="/edit-profile" class="btn btn-dark">
+              <Link to="/edit-profile" className="btn btn-dark">
                 Edit Profile
               </Link>
             )}
@@ -59,15 +60,18 @@ const Profile = ({
                 <>
                   {profile.education.map((edu) => (
                     <ProfileEducation
-                    key={edu._id}
-                    education={edu}
-                  ></ProfileEducation>
+                      key={edu._id}
+                      education={edu}
+                    ></ProfileEducation>
                   ))}
                 </>
               ) : (
                 <h4>No Education credentials</h4>
               )}
             </div>
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername}></ProfileGithub>
+            )}
           </div>
         </>
       )}
